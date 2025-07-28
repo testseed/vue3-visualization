@@ -28,7 +28,6 @@ export const useFunction = () => {
                 }
             }).then(res => {
                 state.weather = res.data.lives[0]
-                console.log(state.weather);
             })
         } catch (error) {
             console.log(error);

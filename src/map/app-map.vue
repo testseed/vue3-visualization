@@ -8,6 +8,7 @@ const initMap = () => {
     map.centerAndZoom(new T.LngLat(116.40769, 39.89945), 13);
     map.enableDrag()
     map.setMapType(window.TMAP_SATELLITE_MAP)
+    mapConfigStore.initConfig(map)
 }
 onMounted(() => {
     // const script = document.createElement('script')

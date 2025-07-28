@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { useFunction } from '@/hook/useFunction'
+import { useRouter } from 'vue-router';
+const router = useRouter()
 let { state, getApiAxios, updateTime } = useFunction()
 onMounted(() => {
     getApiAxios()
@@ -29,7 +31,7 @@ onMounted(() => {
             安全基础
         </div>
         <div class="header-right">
-            <div class="nav-button">
+            <div class="nav-button" @click="router.go(-1)">
                 <img src="../assets/images/返回.png" style="margin-right: 10px;">
                 返回
             </div>
