@@ -30,8 +30,14 @@ type buffter = {
     opacity: string,
     fill_color: string
 }
-//两重点一重大
+//两重点一重大,面积规模
 export type hazardType = {
+    value: number,
+    key: string
+}
+//第三方管理
+export type facilityType = {
+    imgurl: string,
     value: number,
     key: string
 }

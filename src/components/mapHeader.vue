@@ -31,7 +31,7 @@ onMounted(() => {
             安全基础
         </div>
         <div class="header-right">
-            <div class="nav-button" @click="router.go(-1)">
+            <div class="nav-button" @click="router.push('/home')">
                 <img src="../assets/images/返回.png" style="margin-right: 10px;">
                 返回
             </div>

@@ -19,7 +19,6 @@ export const getHazardAPI = (companyId: string) => {
         }
     })
 }
-
 export const getSituationAPI = (companyId: string) => {
     return request({
         url: '/dv3/safe/get-situation',
@@ -29,12 +28,57 @@ export const getSituationAPI = (companyId: string) => {
         }
     })
 }
-
 //安全三同时报告
-export const getComBuildAPI = (companyId: any) => {
+export const getComBuildAPI = (companyId: string) => {
     return request({
         url: '/dv3/safe/get-com-build',
         method: 'GET',
+        data: {
+            companyId
+        }
+    })
+}
+//面积规模
+export const getCompanyAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/safe/get-company',
+        method: 'GET',
+        data: {
+            companyId
+        }
+    })
+}
+//轮班值守
+export const getGuardAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/safe/get-guard',
+        data: {
+            companyId
+        }
+    })
+}
+//禁限控目录
+export const getMatterAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/safe/get-matter',
+        data: {
+            companyId
+        }
+    })
+}
+//装置开停车/装置大检修
+export const getDeviceRecordAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/safe/get-device-record',
+        data: {
+            companyId
+        }
+    })
+}
+//第三方管理
+export const getFacilityAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/safe/get-facility',
         data: {
             companyId
         }

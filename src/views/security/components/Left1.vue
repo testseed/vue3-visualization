@@ -60,7 +60,7 @@ const initChart = () => {
             {
                 name: '危险源统计',
                 type: 'pie',
-                radius: ['45%', '80%'],
+                radius: ['40%', '80%'],
                 avoidLabelOverlap: false,
                 itemStyle: {
                     borderRadius: 10
@@ -144,7 +144,7 @@ onMounted(() => {
 
         .echarDom {
             width: 55%;
-            height: 250px;
+            height: 230px;
         }
 
         .chart-list {
