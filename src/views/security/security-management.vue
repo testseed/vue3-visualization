@@ -7,15 +7,7 @@ import Right1 from './components/Right1.vue'
 import Right2 from './components/Right2.vue'
 import Right3 from './components/Right3.vue'
 import Right4 from './components/Right4.vue'
-import down from '@/assets/images/down.png'
-const menuIndex = ref(0)
-const menuList = ref([
-    { type: 1, name: '全部企业', img: down },
-    { type: 2, name: '装置开停车', img: '' },
-    { type: 3, name: '装置大检修', img: '' },
-    { type: 4, name: '视频监控', img: down },
-    { type: 5, name: '两重点一重大', img: down },
-])
+import Menu from './components/Menu.vue'
 </script>
 
 <template>
@@ -49,68 +41,17 @@ const menuList = ref([
             <span class="font-ssb">装置最大维修程度</span>
             <span class="text-whint">27</span>
         </div>
-        <div class="dv-menu">
-            <ul class="menu">
-                <li @click="menuIndex = item.type" :class="{ active: menuIndex === item.type && menuIndex !== 1 }"
-                    v-for="(item, index) in menuList" :key="index">
-                    <span>{{ item.name }}</span>
-                    <img :src="item.img" alt="">
-                </li>
-            </ul>
-        </div>
+        <Menu></Menu>
     </div>
 </template>
 
 <style scoped lang="scss">
-.active {
-    background-color: rgb(92, 52, 36);
-}
-
 .security-management {
     position: relative;
     top: 80px;
     left: 0;
     width: 100%;
     z-index: 999;
-
-    .dv-menu {
-        background: url('../../assets/images/图层控制.png') no-repeat;
-        background-size: cover;
-        background-position: center;
-        padding: 8px;
-        color: #fff;
-        font-weight: bold;
-        position: absolute;
-        right: calc(450px + 28px);
-        top: 770px;
-        z-index: 999;
-
-        .menu {
-            display: flex;
-            flex-direction: column;
-            background-color: rgb(17, 93, 115, 0.4);
-            // opacity: 0.8;
-            padding-left: 0px;
-            width: 170px;
-
-            li:hover {
-                background-color: #6d4434;
-            }
-
-            li {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 8px;
-                cursor: pointer;
-
-                img {
-                    width: 10px;
-                    height: 10px;
-                }
-            }
-        }
-    }
 
     .border-box-right {
         position: absolute;

@@ -6,7 +6,6 @@ import { onMounted } from 'vue';
 const facilityList = ref<facilityType[]>([])
 const getAPI = async () => {
     const res = await getFacilityAPI('0')
-    console.log(res);
     facilityList.value = res.data.data
 }
 onMounted(() => {

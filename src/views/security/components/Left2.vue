@@ -6,7 +6,6 @@ import * as echarts from 'echarts'
 const comBuildList = ref([])
 const getAPI = async () => {
     const res = await getComBuildAPI('0')
-    console.log(res);
     comBuildList.value = res.data.data
     initChart()
 }

@@ -12,6 +12,11 @@ export const usemapConfigStore = defineStore('mapConfig', () => {
     let parkPolygon = ref<any>()//园区覆盖物坐标数组
     let parkPolygonPay = ref<any>()//园区图形
     const initConfig = (map: any) => {
+        if (!parkInfo.value || !parkInfo.value.boundaries[0].value) {
+            console.log('园区数据未加载');
+            return
+        }
+        const T = (window as any).T
         parkCenter.value = new T.LngLat(parkInfo.value?.longitude, parkInfo.value?.latitude)
         parkPolygon.value = parkInfo.value?.boundaries[0].value.split(';')
             .map(item => item.split(','))
@@ -29,6 +34,7 @@ export const usemapConfigStore = defineStore('mapConfig', () => {
         addParkForMap(map)
     }
     const addParkForMap = (map: any) => {
+        if (!parkCenter.value || !parkPolygonPay.value) return
         map.panTo(parkCenter.value, parkInfo.value?.rank)
         map.setViewport(parkPolygonPay.value)
         map.addOverLay(parkPolygonPay.value)
