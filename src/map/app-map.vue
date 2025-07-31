@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { usemapConfigStore } from '@/stores'
+import { watch } from 'vue';
 const mapConfigStore = usemapConfigStore()
 const initMap = () => {
     let T = (window as any).T
@@ -13,6 +14,16 @@ const initMap = () => {
     map.enableDrag()
     map.setMapType((window as any).TMAP_SATELLITE_MAP)
     mapConfigStore.initConfig(map)
+    watch(() => mapConfigStore.companies, (newVal, oldVal) => {
+        mapConfigStore.initConfig(map)
+    }, {
+        deep: true
+    })
+    watch(() => mapConfigStore.keynote, (newVal, oldVal) => {
+        mapConfigStore.initConfig(map)
+    }, {
+        deep: true
+    })
 }
 onMounted(async () => {
     await mapConfigStore.getPark()

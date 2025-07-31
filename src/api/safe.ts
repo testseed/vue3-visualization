@@ -84,3 +84,18 @@ export const getFacilityAPI = (companyId: string) => {
         }
     })
 }
+//企业列表
+export const getCompaniesAPI = () => {
+    return request({
+        url: '/dv3/public/get-companies',
+    })
+}
+//重大危险源坐标
+export const getKeynoteAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/safe/keynote',
+        data: {
+            companyId
+        }
+    })
+}
