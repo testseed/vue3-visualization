@@ -3,7 +3,7 @@ import VScaleScreen from 'v-scale-screen'
 </script>
 
 <template>
-  <VScaleScreen width="1920" height="1080">
+  <VScaleScreen width="1920" height="1080" :delay="100" :fullScreen="true">
     <router-view></router-view>
     <mapApp></mapApp>
   </VScaleScreen>

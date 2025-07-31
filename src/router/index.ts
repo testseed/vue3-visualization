@@ -22,6 +22,11 @@ const router = createRouter({
           path: 'security',
           name: 'security',
           component: () => import('@/views/security/security-management.vue')
+        },
+        {
+          path: 'major-hazard',
+          name: 'majorHazard',
+          component: () => import('@/views/major-hazard/major-hazard.vue')
         }
       ]
     }

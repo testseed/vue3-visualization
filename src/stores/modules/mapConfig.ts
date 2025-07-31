@@ -53,7 +53,7 @@ export const usemapConfigStore = defineStore('mapConfig', () => {
             companies.value?.region[0].path.map(item => {
                 const [lng, lat] = item.split(',')
                 return [lng, lat]
-            })
+            }).map(i => new T.LngLat(...i))
             ||
             parkInfo.value?.boundaries[0].value.split(';')
                 .map(item => item.split(','))
@@ -64,8 +64,8 @@ export const usemapConfigStore = defineStore('mapConfig', () => {
             color: '#5190de',
             weight: 3,
             opacity: 1,
-            fillColor: companies.value ? '0000ff' : '#6d9f6a',
-            fillOpacity: 0.5,
+            fillColor: companies.value ? companies.value.region[0].style.fillColor : '#6d9f6a',
+            fillOpacity: companies.value ? 0.3 : 0.5,
             lineStyle: "solid"
         })
         addParkForMap(map, T)

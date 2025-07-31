@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import Left1 from './components/Left1.vue'
 import Left2 from './components/Left2.vue'
 import Left3 from './components/Left3.vue'

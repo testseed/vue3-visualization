@@ -11,6 +11,8 @@ const getAPI = async () => {
     try {
         const res = await Promise.all([getHazardAPI('0'), getSituationAPI('0')])
         hazardList.value = res[0].data.data
+        console.log(res[0]);
+
         situationList.value = res[1].data.data
         initChart()
     } catch (error) {
