@@ -2,26 +2,41 @@
 import Menu from './components/Menu.vue'
 import Left1 from './components/Left1.vue'
 import Left2 from './components/Left2.vue'
+import Left3 from './components/Left3.vue'
+import Left4 from './components/Left4.vue'
+import Right1 from './components/Right1.vue'
+import Right2 from './components/Right2.vue'
+import Right3 from './components/Right3.vue'
+import Right4 from './components/Right4.vue'
 </script>
 
 <template>
     <div class="major-hazard">
         <div class="border-box-left">
             <borderBox title="风险预警">
-
+                <Left1></Left1>
             </borderBox>
             <borderBox title="企业分类监督">
                 <Left2></Left2>
             </borderBox>
             <borderBox title="安全包保责任">
+                <Left3></Left3>
             </borderBox>
             <borderBox title="评价/评估报告及隐患">
+                <Left4></Left4>
             </borderBox>
         </div>
         <div class="border-box-right">
-            <borderBox title="轮班值守">
+            <borderBox title="检测报警">
+                <Right1></Right1>
             </borderBox>
-            <borderBox title="禁限空目录">
+            <borderBox title="问题隐患三录入">
+                <Right2></Right2>
+            </borderBox>
+            <borderBox title="应急机构人员">
+                <Right3></Right3>
+            </borderBox>
+            <borderBox title="设备在线状态">
             </borderBox>
         </div>
         <Menu></Menu>

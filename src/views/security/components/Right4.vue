@@ -38,7 +38,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .Right4 {
-    padding: 0 20px;
+    padding: 0 10px;
 
     ul {
         display: flex;
@@ -50,7 +50,7 @@ onMounted(() => {
         li {
             background: url('../../../assets/images/服务商.png') no-repeat;
             background-size: cover;
-            width: 45%;
+            width: 35%;
             padding-left: 40px;
             display: flex;
             align-items: center;

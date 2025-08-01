@@ -25,7 +25,7 @@ const query = defineProps<{
     background-repeat: no-repeat;
     background-color: rgb(0, 42, 64, .4);
     min-height: 200px;
-    width: 450px;
+    width: 400px;
     margin-top: 20px;
 
     .span {

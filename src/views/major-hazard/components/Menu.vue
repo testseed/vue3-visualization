@@ -78,7 +78,7 @@ const keynoteList = ref<keynoteType[]>([])
     <div class="dv-menu">
         <ul class="menu">
             <li class="list-item first-item" @mouseenter="showTarget(1)" @mouseleave="scheduleHide(1)">
-                <span>全部企业</span>
+                <span style="font-size: 16px;">全部企业</span>
                 <img :src="down" alt="">
             </li>
             <li class="list-item" @click="menuIndex = item.type"
@@ -116,7 +116,7 @@ const keynoteList = ref<keynoteType[]>([])
     padding: 8px;
     color: #fff;
     font-weight: bold;
-    right: calc(450px + 28px);
+    right: calc(400px + 28px);
     bottom: 16px;
     z-index: 999;
 
