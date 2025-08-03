@@ -54,9 +54,18 @@ export const getIssueAPI = (companyId: string) => {
         }
     })
 }
+//应急机构人员
 export const getAgencyListAPI = (companyId: string) => {
     return request({
         url: '/dv3/emergency/user-count/agency-list',
+        data: {
+            companyId
+        }
+    })
+}
+export const getDeviceAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/hazard/get-device',
         data: {
             companyId
         }

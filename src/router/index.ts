@@ -27,6 +27,11 @@ const router = createRouter({
           path: 'major-hazard',
           name: 'majorHazard',
           component: () => import('@/views/major-hazard/major-hazard.vue')
+        },
+        {
+          path: 'double-prevention-mechanism',
+          name: 'mechanism',
+          component: () => import('@/views/double-prevention-mechanism/double-prevention-mechanism.vue')
         }
       ]
     }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Menu from './components/Menu.vue'
 import Left1 from './components/Left1.vue'
 import Left2 from './components/Left2.vue'
 import Left3 from './components/Left3.vue'
@@ -8,41 +7,38 @@ import Right1 from './components/Right1.vue'
 import Right2 from './components/Right2.vue'
 import Right3 from './components/Right3.vue'
 import Right4 from './components/Right4.vue'
-import mapLabel from './components/mapLabel.vue'
 </script>
 
 <template>
     <div class="major-hazard">
         <div class="border-box-left">
-            <borderBox title="风险预警">
+            <borderBox title="运行效果分析">
                 <Left1></Left1>
             </borderBox>
-            <borderBox title="企业分类监督">
+            <borderBox title="完成率统计">
                 <Left2></Left2>
             </borderBox>
-            <borderBox title="安全包保责任">
+            <borderBox title="安全风险等级管控措施">
                 <Left3></Left3>
             </borderBox>
-            <borderBox title="评价/评估报告及隐患">
+            <borderBox title="安全风险分析对象/单位/事件统计">
                 <Left4></Left4>
             </borderBox>
         </div>
         <div class="border-box-right">
-            <borderBox title="检测报警">
+            <borderBox title="整改临期提醒/超期提醒">
                 <Right1></Right1>
             </borderBox>
-            <borderBox title="问题隐患三录入">
+            <borderBox title="事故隐患等级排查">
                 <Right2></Right2>
             </borderBox>
-            <borderBox title="应急机构人员">
+            <borderBox title="隐患类型排查">
                 <Right3></Right3>
             </borderBox>
-            <borderBox title="设备在线状态">
+            <borderBox title="隐患趋势">
                 <Right4></Right4>
             </borderBox>
         </div>
-        <Menu></Menu>
-        <mapLabel></mapLabel>
     </div>
 </template>
 
@@ -57,7 +53,7 @@ import mapLabel from './components/mapLabel.vue'
     .border-box-right {
         position: absolute;
         top: 0;
-        right: 0;
+        left: calc(400px + 40px);
         margin-right: 20px;
     }
 
