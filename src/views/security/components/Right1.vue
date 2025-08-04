@@ -42,6 +42,7 @@ onMounted(() => {
     display: flex;
     align-items: center;
     margin-top: 25px;
+    padding-bottom: 30px;
 
     .guard {
         background: url('../../../assets/images/离线视频.png') no-repeat;

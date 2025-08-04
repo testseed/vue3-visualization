@@ -1,15 +1,17 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref, type Ref } from 'vue'
 import { usemapConfigStore } from '@/stores'
 import { watch } from 'vue';
+import { onUnmounted } from 'vue';
 const mapConfigStore = usemapConfigStore()
+let map = null
 const initMap = () => {
     let T = (window as any).T
     if (!T) {
         console.log('地图api未加载');
         return
     }
-    let map = new T.Map('mapDiv')
+    map = new T.Map('mapDiv')
     map.centerAndZoom(new T.LngLat(116.40769, 39.89945), 13);
     map.enableDrag()
     map.setMapType((window as any).TMAP_SATELLITE_MAP)
@@ -34,6 +36,12 @@ onMounted(async () => {
     }
     document.body.appendChild(script)
     document.body.onload = initMap
+})
+onUnmounted(() => {
+    if (map) {
+        map.destroy();
+        map = null;
+    }
 })
 </script>
 

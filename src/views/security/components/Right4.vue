@@ -38,7 +38,7 @@ onMounted(() => {
 
 <style scoped lang="scss">
 .Right4 {
-    padding: 0 10px;
+    padding: 30px 10px;
 
     ul {
         display: flex;

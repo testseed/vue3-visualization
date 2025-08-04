@@ -14,6 +14,7 @@ const colors = [
     '#fb6042',   // 索引 6
     '#fb4246'    // 索引 7
 ];
+const dangerName = ['安全', '消防', '工艺', '总图', '电气', '其他', '仪表', '外聘专家排查']
 const newDanger = ref()
 const getAPI = async () => {
     const res = await getDangerTypeAPI('0')
@@ -21,6 +22,7 @@ const getAPI = async () => {
     dangerList.value = res.data.data
     newDanger.value = dangerList.value.map((value, index) => ({
         value: value,
+        name: dangerName[index],
         itemStyle: {
             // 使用当前索引对应的颜色，若颜色数组长度不足则用默认色
             color: colors[index] || '#cccccc'
@@ -29,10 +31,10 @@ const getAPI = async () => {
     console.log(newDanger.value);
     initEchart()
 }
-let echartDom = ref()
+let echarDom = ref()
 let myechar = ref()
 const initEchart = () => {
-    myechar.value = echarts.init(echartDom.value)
+    myechar.value = echarts.init(echarDom.value)
     myechar.value.setOption({
         tooltip: {
             trigger: 'item',
@@ -43,8 +45,8 @@ const initEchart = () => {
         series: [
             {
                 type: 'pie',
-                radius: ['40%', '70%'], // 环形图内外半径，控制环形粗细
-                center: ['50%', '50%'], // 调整环形图在容器中的位置
+                radius: ['40%', '80%'], // 环形图内外半径，控制环形粗细
+                center: ['50%', '40%'], // 调整环形图在容器中的位置
                 avoidLabelOverlap: false,
                 label: {
                     show: false,
@@ -57,7 +59,7 @@ const initEchart = () => {
                 emphasis: {
                     label: {
                         show: true,
-                        fontSize: '14',
+                        fontSize: '12',
                         fontWeight: 'bold'
                     }
                 },
@@ -79,16 +81,59 @@ onMounted(() => {
 <template>
     <div class="Right3">
         <div class="echarDom" ref="echarDom"></div>
+        <ul>
+            <li v-for="item in newDanger" :key="item">
+                <div :style="`background-color: ${item.itemStyle.color};`" class="bot"></div>
+                <span>{{ item.name }}</span>
+                <p :style="`color: ${item.itemStyle.color};`">{{ item.value }}</p>
+            </li>
+        </ul>
     </div>
 </template>
 
 <style scoped lang="scss">
 .Right3 {
     padding: 0 10px;
+    display: flex;
 
     .echarDom {
         width: 40%;
-        height: 200px;
+        height: 170px;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            width: 40%;
+            font-size: 14px;
+
+            .bot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                flex-shrink: 0;
+                background-color: aqua;
+            }
+
+            span {
+                color: #fff;
+                margin-left: 10px;
+                margin-right: 20px;
+            }
+
+            p {
+                color: aqua;
+                font-weight: bold;
+                margin-left: auto;
+            }
+        }
     }
 }
 </style>

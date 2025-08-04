@@ -11,8 +11,24 @@ const deviceList = ref<matterType[]>([])
 const getAPI = async () => {
     const res = await getDeviceRecordAPI('0')
     deviceList.value = res.data.data
+    color.value = [
+        '#5470c6',
+        deviceList.value[1].value === 0 ? 'transparent' : 'red',
+        '#fac858',
+        deviceList.value[3].value === 0 ? 'transparent' : '#80b46b'
+    ]
+    device.value = deviceList.value.map((item, index) => ({
+        ...item,
+        value: 1,
+        itemStyle: {
+            color: color.value[index]
+        }
+    }))
+    console.log(device);
     initChart()
 }
+const color = ref()
+const device = ref({})
 let chartDom = ref()
 let mychart = ref()
 const initChart = () => {
@@ -79,14 +95,10 @@ const initChart = () => {
                     }
                 },
                 label: { show: true, formatter: '{b}', color: '#b5e9ed' },
-                data: [
-                    { value: deviceList.value[0].value, name: deviceList.value[0].name, itemStyle: { color: '#1890ff' } },
-                    { value: deviceList.value[1].value, name: deviceList.value[1].name, itemStyle: { color: 'transparent' } },
-                    { value: deviceList.value[2].value, name: deviceList.value[2].name, itemStyle: { color: '#52c41a' } },
-                    { value: deviceList.value[3].value, name: deviceList.value[3].name, itemStyle: { color: 'transparent' } }
-                ]
-            }
-        ]
+                data: device.value,
+                selectedMode: false
+            },
+        ],
     })
 }
 onMounted(() => [

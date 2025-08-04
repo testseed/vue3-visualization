@@ -38,7 +38,7 @@ onMounted(() => [
 
 <style scoped lang="scss">
 .Left4 {
-    padding: 0 10px;
+    padding: 10px 10px;
 
     .safe {
         background: url('../../../assets/images/doublePreventionMechanism/三联指标.png') no-repeat;

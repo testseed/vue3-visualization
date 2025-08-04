@@ -7,6 +7,7 @@ import Right1 from './components/Right1.vue'
 import Right2 from './components/Right2.vue'
 import Right3 from './components/Right3.vue'
 import Right4 from './components/Right4.vue'
+import Menu from './components/Menu.vue'
 </script>
 
 <template>
@@ -39,6 +40,7 @@ import Right4 from './components/Right4.vue'
                 <Right4></Right4>
             </borderBox>
         </div>
+        <Menu></Menu>
     </div>
 </template>
 

@@ -38,6 +38,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    padding: 20px 0;
 
     .matter {
         flex: 1;

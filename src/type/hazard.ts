@@ -21,7 +21,7 @@ export type issueType = {
     plan: itemType[],
     severity: itemType[]
 }
-type itemType = {
+export type itemType = {
     value: number,
     key: string
 }

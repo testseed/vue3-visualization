@@ -44,3 +44,21 @@ export const getDangerTypeAPI = (companyId: string) => {
         }
     })
 }
+//隐患趋势
+export const getTrendAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/prevention/get-trend',
+        data: {
+            companyId
+        }
+    })
+}
+//风险对象
+export const getControlInfoLisAPI = (companyId: string) => {
+    return request({
+        url: '/dv3/prevention/get-control-info-lis',
+        data: {
+            companyId
+        }
+    })
+}
