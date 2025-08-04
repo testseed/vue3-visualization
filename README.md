@@ -1,39 +1,31 @@
-# vue3-visualization
+## 项目简介
+安全风控数据可视化项目
 
-This template should help get you started developing with Vue 3 in Vite.
+本项目是面向园区 / 企业安全管理场景的可视化平台，基于 Vue3 + TypeScript 技术栈开发，结合 ECharts 实现数据可视化图表渲染，集成天地图 API 搭建地理信息底座，用于直观呈现安全风控数据（如危险源分布、巡检状态、工艺风险等），助力安全管理决策与风险预警。
 
-## Recommended IDE Setup
+地理信息可视化：
+基于天地图 API 加载园区 / 厂区卫星地图，支持区域边界绘制、点位标注（如危险源位置、巡检点等），直观呈现空间分布。
+支持地图交互（缩放、平移、点击弹窗），关联业务数据（如点击点位查看风险详情）。
+安全数据看板：
+风险概览：通过 ECharts 饼图 / 环形图展示危险源等级分布（一级～四级）、重点监管工艺 / 化学品数量。
+动态监测：实时统计装置开停车、大检修状态（如检修作业占比、风险趋势），以柱状图、饼图呈现。
+合规与预警：展示禁限空目录、三同时报告等合规数据，结合可视化组件突出异常指标（如违规数量预警）。
+多维度数据关联：
+整合 “两重点一重大”（重点工艺、化学品、危险源）、安全三同时报告、第三方单位管理等数据，支持跨模块查询与联动分析。
+技术栈
+框架与语言：Vue3（Composition API） + TypeScript（类型安全开发）
+可视化：ECharts（饼图、柱状图、环形图等）
+地图服务：天地图 API（地理底图加载、空间数据渲染）
+工程化：Vite（快速构建与热更新）、Pinia（状态管理，可选）、Vue Router（路由管理）
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+# 安装依赖
+pnpm install 
 
-## Type Support for `.vue` Imports in TS
+# 本地开发（启动热更新服务）
+pnpm run dev 
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+# 生产构建
+pnpm run build 
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+地图配置：
+前往天地图开放平台申请 API Key，替换项目中地图初始化代码的 key。
